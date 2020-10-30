@@ -93,7 +93,7 @@ function cardMaker(obj){
   cardInfo.appendChild(username);
   cardInfo.appendChild(locationP1);
   cardInfo.appendChild(profileP2);
-  profileP2.appendChild(profileLink);
+  // profileP2.appendChild(profileLink);
   cardInfo.appendChild(followersP3);
   cardInfo.appendChild(followingP4);
   cardInfo.appendChild(bioP5);
@@ -104,13 +104,15 @@ function cardMaker(obj){
   userRealName.classList.add("username");
 
   userImg.src = obj["avatar_url"];
-
+  // debugger;
   userRealName.textContent = obj["name"];
   username.textContent = obj["login"];
   locationP1.textContent = `Location: ${obj["location"]}`;
-  profileP2.textContent = "Profile:";
+  
   profileLink.href = obj["html_url"];
   profileLink.textContent = obj["html_url"];
+  profileP2.textContent = "Profile: ";
+  profileP2.appendChild(profileLink);
   followersP3.textContent = `Followers: ${obj["followers"]}`;
   followingP4.textContent = `Following: ${obj["following"]}`;
   bioP5.textContent = `Bio: ${obj["bio"]}`;
